@@ -252,8 +252,12 @@
     background: var(--white);
     border: 1.5px solid var(--border);
     color: var(--black);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    cursor: pointer;
   }
 
+  a.pill:hover { background: var(--black); color: var(--white); border-color: var(--black); }
   .pill.red { background: var(--red); color: var(--white); border-color: var(--red); }
 
   .about-card {
@@ -652,7 +656,7 @@
     <div>
       <h1 class="hero-name">Haoxuan<br><em>Tang</em></h1>
       <p class="hero-desc" style="margin-top: 24px;">
-        Graduate student at Northeastern University Seattle. Former International Student Ambassador at the University of Nottingham. Community builder, content creator, and peer advocate.
+        Graduate student at Northeastern University Seattle. Former International Student Ambassador at the University of Nottingham, with experience in student community support, content creation, and event organization.
       </p>
     </div>
     <div class="hero-links">
@@ -710,11 +714,11 @@
       </p>
       <div class="about-pills">
         <span class="pill red">Student Ambassador</span>
-        <span class="pill">Content Creation</span>
-        <span class="pill">Event Planning</span>
+        <a class="pill" href="#articles">Content Creation</a>
+        <a class="pill" href="#community">Event Planning</a>
         <span class="pill">Bilingual (EN/ZH)</span>
-        <span class="pill">Adobe Suite</span>
-        <span class="pill">Photography</span>
+        <a class="pill" href="#design">Adobe Suite</a>
+        <a class="pill" href="#articles">Photography</a>
       </div>
     </div>
     <div class="about-card">
@@ -764,12 +768,12 @@
 </section>
 
 <!-- ARTICLES -->
-<div class="articles-section">
+<div class="articles-section" id="articles">
   <div class="articles-inner">
     <div class="section-label">Content Portfolio</div>
     <h2 class="section-title">22 articles.<br>5 <span>categories</span>.</h2>
     <p style="font-size: 15px; color: #666; max-width: 560px; line-height: 1.7; margin-bottom: 48px;">
-      As part of the Faculty of Engineering's WeChat Official Account team, I contributed to articles spanning faculty introductions, student interviews, event coverage, travel features, and graduation showcases — creating content that reached Chinese-speaking prospective students worldwide.
+      During my time as an International Student Ambassador at the University of Nottingham (2022–2023), I contributed to the Faculty of Engineering's WeChat Official Account — producing articles spanning faculty introductions, student interviews, event coverage, travel features, and graduation showcases, reaching Chinese-speaking prospective students worldwide.
     </p>
     <div class="articles-grid">
 
@@ -844,7 +848,7 @@
 </div>
 
 <!-- COMMUNITY -->
-<div class="community-section">
+<div class="community-section" id="community">
   <div class="community-inner">
     <div class="section-label">Community Work</div>
     <h2 class="section-title">More than <span>content</span>.<br>Real student support.</h2>
@@ -854,7 +858,7 @@
         <div class="community-icon">💬</div>
         <h3>WeChat Q&A Community</h3>
         <p>
-          Moderated a dedicated WeChat group serving <span class="community-highlight">100+ prospective and admitted students</span> over 10 months. Hosted regular online office hours (Mon–Fri, 20:00–21:00 BJT) to answer questions in real time about academic programs, campus life, and student resources.
+          Moderated a dedicated WeChat group serving <span class="community-highlight">100+ prospective and admitted students</span> over 12 months. Hosted regular online office hours (Mon–Fri, 20:00–21:00 BJT) to answer questions in real time about academic programs, campus life, and student resources.
         </p>
       </div>
 
@@ -887,25 +891,28 @@
 </div>
 
 <!-- EXHIBIT -->
-<div class="exhibit-section">
+<div class="exhibit-section" id="design">
   <div class="exhibit-inner">
     <div class="section-label">Design Background</div>
     <div class="exhibit-grid">
-      <div class="exhibit-images">
-        <div class="exhibit-img tall">
+      <div class="exhibit-images" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; align-items: start;">
+        <div style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#e5e0d8;">
           <img src="https://www.nottingham.ac.uk/engineering/images/2023-abe-exhibit/postgraduate-taught/ruoming-fang/3-perspective.png"
                alt="exhibit!23 postgraduate project"
-               onerror="this.style.display='none'; this.parentElement.style.background='#e5e0d8';">
+               style="width:100%; height:100%; object-fit:cover; display:block;"
+               onerror="this.style.display='none';">
         </div>
-        <div class="exhibit-img">
+        <div style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#d4cfca;">
           <img src="https://www.nottingham.ac.uk/engineering/images/2023-abe-exhibit/year-three/michael-tanjaya/4-view-from-across-the-river.png"
                alt="exhibit!23 year three project"
-               onerror="this.style.display='none'; this.parentElement.style.background='#d4cfca';">
+               style="width:100%; height:100%; object-fit:cover; display:block;"
+               onerror="this.style.display='none';">
         </div>
-        <div class="exhibit-img">
+        <div style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#cac5bf;">
           <img src="https://www.nottingham.ac.uk/engineering/images/2023-abe-exhibit/year-five/anna-longley/2-marshland.png"
                alt="exhibit!23 year five project"
-               onerror="this.style.display='none'; this.parentElement.style.background='#cac5bf';">
+               style="width:100%; height:100%; object-fit:cover; display:block;"
+               onerror="this.style.display='none';">
         </div>
       </div>
       <div class="exhibit-text">
@@ -914,7 +921,7 @@
           Before pivoting to software engineering, I spent years working at the intersection of design, spatial thinking, and community impact — as an urban designer, a graduate student in sustainable urban design, and a student ambassador who created visual content for a global audience.
         </p>
         <p>
-          This background gives me a strong eye for visual communication — useful for designing event materials, social media content, and promotional graphics that actually resonate.
+          This background directly informs my ambassador work: I designed promotional materials for Faculty events, produced photography and video for the WeChat Official Account, and brought a visual storytelling lens to everything from campus tours to graduation showcases.
         </p>
         <div class="exhibit-quote">
           <p>"This program gave me a complete and systematic opportunity to learn urban design, broadening my horizons considerably."</p>
@@ -922,7 +929,7 @@
         </div>
         <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
           <a class="btn btn-red" href="https://www.nottingham.ac.uk/engineering/departments/abe/exhibitions/2023/index.aspx" target="_blank">View exhibit!23 ↗</a>
-          <a class="btn btn-outline" href="https://linkedin.com/in/haoxuan-tang" target="_blank">LinkedIn ↗</a>
+          <a class="btn btn-outline" href="#community">Ambassador Work ↓</a>
         </div>
       </div>
     </div>
