@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haoxuan Tang — GLS Ambassador Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C8102E;
+    --red-light: #f5e6e9;
+    --black: #111111;
+    --grey: #6b6b6b;
+    --light: #f9f7f4;
+    --white: #ffffff;
+    --border: #e5e0d8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    background: var(--black);
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,16,46,0.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--red);
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 6vw, 80px);
+    color: var(--white);
+    line-height: 1.05;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-name em {
+    font-style: italic;
+    color: var(--red);
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    color: #aaa;
+    line-height: 1.7;
+    max-width: 340px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-links {
+    display: flex;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  .hero-link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .hero-link:hover { color: var(--red); border-color: var(--red); }
+
+  .hero-right {
+    background: var(--red-light);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-photo-wrap {
+    width: 280px;
+    height: 360px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 24px 24px 0 rgba(200,16,46,0.2);
+    opacity: 0;
+    animation: fadeIn 1s 0.6s forwards;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-photo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .hero-deco {
+    position: absolute;
+    font-family: 'DM Serif Display', serif;
+    font-size: 180px;
+    color: rgba(200,16,46,0.08);
+    bottom: -30px;
+    right: -20px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  /* SECTION LAYOUT */
+  section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 48px;
+  }
+
+  .section-title span {
+    font-style: italic;
+    color: var(--red);
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--black);
+    padding: 40px 0;
+  }
+
+  .stats-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 20px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+  }
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    color: var(--white);
+    display: block;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-num em {
+    color: var(--red);
+    font-style: normal;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+  }
+
+  .about-text p strong { color: var(--black); }
+
+  .about-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
+  }
+
+  .pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 100px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    color: var(--black);
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+
+  a.pill:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+  .pill.red { background: var(--red); color: var(--white); border-color: var(--red); }
+
+  .about-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .about-card-header {
+    background: var(--red);
+    padding: 24px 28px;
+  }
+
+  .about-card-header h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .about-card-header p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 1px;
+  }
+
+  .about-card-body {
+    padding: 24px 28px;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline-item:last-child { border-bottom: none; }
+
+  .timeline-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  .timeline-text strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 3px;
+  }
+
+  .timeline-text span {
+    font-size: 12px;
+    color: var(--grey);
+  }
+
+  /* ARTICLES GRID */
+  .articles-section {
+    background: var(--white);
+    padding: 100px 0;
+  }
+
+  .articles-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .article-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background: var(--light);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    border-color: var(--red);
+  }
+
+  .article-cat {
+    padding: 10px 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--black);
+  }
+
+  .article-cat.photography { background: #1a4a2e; }
+  .article-cat.interview { background: #1a3a5a; }
+  .article-cat.event { background: #4a1a2e; }
+  .article-cat.intro { background: #2a2a1a; }
+  .article-cat.graduation { background: #3a1a4a; }
+
+  .article-body {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .article-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    line-height: 1.35;
+    color: var(--black);
+  }
+
+  .article-note {
+    font-size: 12px;
+    color: var(--grey);
+    line-height: 1.5;
+  }
+
+  .article-arrow {
+    font-size: 20px;
+    color: var(--red);
+    margin-top: auto;
+  }
+
+  /* COMMUNITY SECTION */
+  .community-section {
+    background: var(--black);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .community-section::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,16,46,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .community-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .community-inner .section-label { color: #ff6b6b; }
+  .community-inner .section-title { color: var(--white); }
+  .community-inner .section-title span { color: #ff6b6b; }
+
+  .community-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .community-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 36px;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .community-card:hover {
+    background: rgba(200,16,46,0.1);
+    border-color: rgba(200,16,46,0.4);
+  }
+
+  .community-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .community-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .community-card p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.7;
+  }
+
+  .community-highlight {
+    color: #ff6b6b;
+    font-weight: 600;
+  }
+
+  /* EXHIBIT SECTION */
+  .exhibit-section {
+    padding: 100px 0;
+    background: var(--light);
+  }
+
+  .exhibit-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  .exhibit-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .exhibit-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .exhibit-img {
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--border);
+    aspect-ratio: 3/4;
+  }
+
+  .exhibit-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .exhibit-img.tall {
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+
+  .exhibit-text h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--black);
+    line-height: 1.2;
+    margin-bottom: 20px;
+  }
+
+  .exhibit-text p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .exhibit-quote {
+    border-left: 3px solid var(--red);
+    padding: 16px 20px;
+    background: var(--white);
+    border-radius: 0 8px 8px 0;
+    margin: 24px 0;
+  }
+
+  .exhibit-quote p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--black);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .exhibit-quote cite {
+    display: block;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--grey);
+    margin-top: 8px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-red {
+    background: var(--red);
+    color: var(--white);
+  }
+  .btn-red:hover { background: #a00c24; transform: translateY(-2px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--black);
+    border: 1.5px solid var(--black);
+  }
+  .btn-outline:hover { background: var(--black); color: var(--white); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  footer h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  footer p {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 32px;
+  }
+
+  footer .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  footer a {
+    font-size: 13px;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer a:hover { color: var(--red); }
+
+  /* DIVIDER */
+  .red-stripe {
+    height: 4px;
+    background: linear-gradient(90deg, var(--red) 0%, #ff6b6b 50%, var(--red) 100%);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 60px 32px; min-height: 100vh; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .articles-grid { grid-template-columns: 1fr; }
+    .community-grid { grid-template-columns: 1fr; }
+    .exhibit-grid { grid-template-columns: 1fr; }
+    section { padding: 60px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">GLS Ambassador Portfolio · Northeastern Seattle</div>
+    <div>
+      <h1 class="hero-name">Haoxuan<br><em>Tang</em></h1>
+      <p class="hero-desc" style="margin-top: 24px;">
+        International student myself — having studied and lived across China, the UK, and the US. Former International Student Ambassador at the University of Nottingham, with experience supporting international students through cultural and academic transitions, bilingual content creation, and intercultural community programming.
+      </p>
+    </div>
+    <div class="hero-links">
+      <a class="hero-link" href="https://linkedin.com/in/haoxuan-tang" target="_blank">LinkedIn ↗</a>
+      <a class="hero-link" href="https://github.com/thxsyyd" target="_blank">GitHub ↗</a>
+      <a class="hero-link" href="mailto:tang.haoxu@northeastern.edu">Email ↗</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <img src="photo.jpg" alt="Haoxuan Tang">
+    </div>
+    <div class="hero-deco">H</div>
+  </div>
+</div>
+
+<div class="red-stripe"></div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-num">22</span>
+      <span class="stat-label">Published Articles</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">206</span>
+      <span class="stat-label">FAQ Entries</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">100<em>+</em></span>
+      <span class="stat-label">Students Supported</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">12</span>
+      <span class="stat-label">Months as Ambassador</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <div class="section-label">About Me</div>
+  <h2 class="section-title">I've been that<br><span>international student</span>.</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm <strong>Haoxuan (Hao) Tang</strong>, a first-year graduate student in Computer Software Engineering at Northeastern University's Seattle campus. I grew up in China, completed my graduate studies in the UK, and am now navigating a new city and a new career path in the US — which means I've experienced firsthand what it means to arrive somewhere unfamiliar and figure it out.
+      </p>
+      <p>
+        At the University of Nottingham, I served for nearly a year as an <strong>International Student Ambassador</strong> in the Faculty of Engineering — a formal, paid role where I ran bilingual Q&A sessions, built community resources for incoming students from around the world, organized intercultural events, and helped hundreds of prospective students navigate both the academic and cultural transition to life in the UK.
+      </p>
+      <p>
+        That lived experience — and the empathy that comes with it — is what I bring to the GLS Ambassador role.
+      </p>
+      <div class="about-pills">
+        <span class="pill red">Student Ambassador</span>
+        <a class="pill" href="#articles">Content Creation</a>
+        <a class="pill" href="#community">Event Planning</a>
+        <span class="pill">Bilingual (EN/ZH)</span>
+        <a class="pill" href="#design">Adobe Suite</a>
+        <a class="pill" href="#articles">Photography</a>
+      </div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-header">
+        <h3>Experience at a Glance</h3>
+        <p>INTERCULTURAL & LEADERSHIP ROLES</p>
+      </div>
+      <div class="about-card-body">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-text">
+            <strong>MS Computer Software Engineering</strong>
+            <span>Northeastern University Seattle · Jan 2026 – Present</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-text">
+            <strong>International Student Ambassador</strong>
+            <span>University of Nottingham · Dec 2022 – Oct 2023</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-text">
+            <strong>Course Representative</strong>
+            <span>University of Nottingham · Sep 2022 – Sep 2023</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-text">
+            <strong>Assistant Project Manager</strong>
+            <span>Cushman & Wakefield · May 2024 – Dec 2025</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-text">
+            <strong>MArch Sustainable Urban Design · GPA 3.7</strong>
+            <span>University of Nottingham · Sep 2022 – Dec 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES -->
+<div class="articles-section" id="articles">
+  <div class="articles-inner">
+    <div class="section-label">Content Portfolio</div>
+    <h2 class="section-title">22 articles.<br>5 <span>categories</span>.</h2>
+    <p style="font-size: 15px; color: #666; max-width: 560px; line-height: 1.7; margin-bottom: 48px;">
+      During my time as an International Student Ambassador at the University of Nottingham (2022–2023), I contributed to the Faculty of Engineering's WeChat Official Account — creating bilingual content to help Chinese-speaking prospective students understand academic life, campus culture, and the experience of studying internationally in the UK.
+    </p>
+    <div class="articles-grid">
+
+      <a class="article-card" href="https://mp.weixin.qq.com/s/pUFeaziDn0aZ1Q9PI30xNg" target="_blank">
+        <div class="article-cat intro">Faculty Introduction</div>
+        <div class="article-body">
+          <div>
+            <div class="article-title">Introducing the Department of Architecture and Built Environment</div>
+            <p class="article-note">A bilingual welcome piece introducing DABE to prospective Chinese-speaking students — covering faculty, programs, and campus culture.</p>
+          </div>
+          <div class="article-arrow">→</div>
+        </div>
+      </a>
+
+      <a class="article-card" href="https://mp.weixin.qq.com/s/BxEfrUN9aWN9B1WUOaKZow" target="_blank">
+        <div class="article-cat photography">Photography & Travel</div>
+        <div class="article-body">
+          <div>
+            <div class="article-title">Spring Footprints — A Journey Across Half the World</div>
+            <p class="article-note">Featured photographer & videographer. My images of New York, the Grand Canyon, and the West Coast documented student life beyond the classroom.</p>
+          </div>
+          <div class="article-arrow">→</div>
+        </div>
+      </a>
+
+      <a class="article-card" href="https://mp.weixin.qq.com/s/5hW7W_nUIax9yd9GjvuDyg" target="_blank">
+        <div class="article-cat interview">Student Interview</div>
+        <div class="article-body">
+          <div>
+            <div class="article-title">Cross-Discipline Traveller — MArch Sustainable Urban Design Student Profile</div>
+            <p class="article-note">A student-facing interview series profiling the academic journey and life experience of graduate students in the Faculty.</p>
+          </div>
+          <div class="article-arrow">→</div>
+        </div>
+      </a>
+
+      <a class="article-card" href="https://mp.weixin.qq.com/s/C7ZsGOHgADBNdX8War-DRA" target="_blank">
+        <div class="article-cat event">Event Coverage</div>
+        <div class="article-body">
+          <div>
+            <div class="article-title">Let's Play, Let's Connect! — Postgraduate Social Event Recap</div>
+            <p class="article-note">Coverage of an in-person social gathering for graduate students — capturing the energy of community events we helped organize.</p>
+          </div>
+          <div class="article-arrow">→</div>
+        </div>
+      </a>
+
+      <a class="article-card" href="https://mp.weixin.qq.com/s/-G84pFWUOhnH3OxMvIGQ-g" target="_blank">
+        <div class="article-cat event">New Student Events</div>
+        <div class="article-body">
+          <div>
+            <div class="article-title">Faculty Tea Talk — Student & Staff Welcome Sessions for Admitted Students</div>
+            <p class="article-note">Promotion for a series of online Q&A sessions connecting admitted students with faculty and current students before arrival.</p>
+          </div>
+          <div class="article-arrow">→</div>
+        </div>
+      </a>
+
+      <a class="article-card" href="https://mp.weixin.qq.com/s?__biz=Mzk0NDMyMDE4Nw==&mid=2247501667&idx=5&sn=88e5f6a3615aaffca00acece2029efa9" target="_blank">
+        <div class="article-cat graduation">Graduation Showcase</div>
+        <div class="article-body">
+          <div>
+            <div class="article-title">exhibit!23 — DABE Summer Graduation Exhibition</div>
+            <p class="article-note">Coverage of the 2023 end-of-year show. My own design project and written reflection were featured in this piece.</p>
+          </div>
+          <div class="article-arrow">→</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- COMMUNITY -->
+<div class="community-section" id="community">
+  <div class="community-inner">
+    <div class="section-label">Intercultural Community Work</div>
+    <h2 class="section-title">More than <span>content</span>.<br>Real student support.</h2>
+    <div class="community-grid">
+
+      <div class="community-card">
+        <div class="community-icon">💬</div>
+        <h3>WeChat Q&A Community</h3>
+        <p>
+          Moderated a dedicated WeChat group serving <span class="community-highlight">100+ prospective and admitted students</span> over 12 months. Hosted regular online office hours (Mon–Fri, 20:00–21:00 BJT) to answer questions in real time about academic programs, campus life, and student resources.
+        </p>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">📋</div>
+        <h3>206-Question Bilingual FAQ</h3>
+        <p>
+          Compiled and maintained a comprehensive <span class="community-highlight">206-question FAQ document across 9 categories</span> — covering accommodation, academic programs, software resources, course structure, student services, career pathways, and daily life in the UK — designed to help students navigate their transition with confidence.
+        </p>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">🎪</div>
+        <h3>Event Planning & Logistics</h3>
+        <p>
+          Co-organized virtual onboarding sessions (Tea Talk series) and in-person social gatherings for the graduate student community. Managed <span class="community-highlight">end-to-end logistics</span>: promotional design, stakeholder coordination, venue setup, and post-event follow-up.
+        </p>
+      </div>
+
+      <div class="community-card">
+        <div class="community-icon">🏛️</div>
+        <h3>Campus Tours & Student Panels</h3>
+        <p>
+          Led campus tours for prospective students and families, and served as a <span class="community-highlight">student panelist</span> at Faculty recruitment events — helping international applicants get an authentic, peer-to-peer perspective on graduate life at Nottingham.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- EXHIBIT -->
+<div class="exhibit-section" id="design">
+  <div class="exhibit-inner">
+    <div class="section-label">Design Background</div>
+    <div class="exhibit-grid">
+      <div class="exhibit-images" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; align-items: start;">
+        <div style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#e5e0d8;">
+          <img src="https://www.nottingham.ac.uk/engineering/images/2023-abe-exhibit/postgraduate-taught/ruoming-fang/3-perspective.png"
+               alt="exhibit!23 postgraduate project"
+               style="width:100%; height:100%; object-fit:cover; display:block;"
+               onerror="this.style.display='none';">
+        </div>
+        <div style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#d4cfca;">
+          <img src="https://www.nottingham.ac.uk/engineering/images/2023-abe-exhibit/year-three/michael-tanjaya/4-view-from-across-the-river.png"
+               alt="exhibit!23 year three project"
+               style="width:100%; height:100%; object-fit:cover; display:block;"
+               onerror="this.style.display='none';">
+        </div>
+        <div style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#cac5bf;">
+          <img src="https://www.nottingham.ac.uk/engineering/images/2023-abe-exhibit/year-five/anna-longley/2-marshland.png"
+               alt="exhibit!23 year five project"
+               style="width:100%; height:100%; object-fit:cover; display:block;"
+               onerror="this.style.display='none';">
+        </div>
+      </div>
+      <div class="exhibit-text">
+        <h2>Architecture & Design Background</h2>
+        <p>
+          Before pivoting to software engineering, I spent years working at the intersection of design, spatial thinking, and community impact — as an urban designer, a graduate student in sustainable urban design, and a student ambassador who created visual content for a global audience.
+        </p>
+        <p>
+          This background directly informs my ambassador work: I designed promotional materials for Faculty events, produced photography and video for the WeChat Official Account, and brought a visual storytelling lens to everything from campus tours to graduation showcases.
+        </p>
+        <div class="exhibit-quote">
+          <p>"This program gave me a complete and systematic opportunity to learn urban design, broadening my horizons considerably."</p>
+          <cite>— Haoxuan Tang, MArch Sustainable Urban Design 2022–23, featured in exhibit!23</cite>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+          <a class="btn btn-red" href="https://www.nottingham.ac.uk/engineering/departments/abe/exhibitions/2023/index.aspx" target="_blank">View exhibit!23 ↗</a>
+          <a class="btn btn-outline" href="#community">Ambassador Work ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <h2>Let's connect.</h2>
+  <div class="footer-links">
+    <a href="mailto:tang.haoxu@northeastern.edu">tang.haoxu@northeastern.edu</a>
+    <a href="https://linkedin.com/in/haoxuan-tang" target="_blank">LinkedIn</a>
+    <a href="https://github.com/thxsyyd" target="_blank">GitHub</a>
+    <a href="tel:4257492820">425-749-2820</a>
+  </div>
+  <p style="margin-top: 40px; font-size: 11px; color: #555;">
+    Haoxuan Tang · Northeastern University Seattle · 2026
+  </p>
+</footer>
+
+</body>
+</html>
