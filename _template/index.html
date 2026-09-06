@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+  ===================================================================
+  ROLE PAGE TEMPLATE
+  ===================================================================
+  New application:
+      cp -r _template <role-slug>
+  then edit ONLY the blocks marked  <!== EDIT ==>  below.
+
+  Never edit styling here. All CSS lives in ../assets/base.css and is
+  shared by every role page. Restyling one file restyles all of them.
+
+  This folder starts with "_" so GitHub Pages (Jekyll) does not publish
+  it. Copies without the underscore publish normally.
+
+  THREE LAYERS:
+    1. Styling  -> ../assets/base.css        (never touch)
+    2. Facts    -> timeline / contact below  (only when the CV changes)
+    3. Role     -> everything marked EDIT    (rewrite every application)
+  ===================================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--== EDIT: page title = name + exact role title ==-->
+<title>Haoxuan (Daisy) Tang — ROLE TITLE HERE</title>
+
+<!--== EDIT: one sentence, shows up in link previews ==-->
+<meta name="description" content="Application portfolio of Haoxuan (Daisy) Tang for the ROLE TITLE role — two or three keywords from the posting.">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/base.css">
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="hero-left">
+    <!--== EDIT: exact posting title + term ==-->
+    <div class="hero-tag">Application Portfolio<br>ROLE TITLE · TERM</div>
+    <div>
+      <h1 class="hero-name">Haoxuan<br><em>(Daisy)</em> Tang</h1>
+      <!--== EDIT: the angle. Why you, for THIS posting, in ~45 words.
+                  Lead with the single strongest match, not a summary. ==-->
+      <p class="hero-desc" style="margin-top: 24px;">
+        ANGLE SENTENCE.
+      </p>
+    </div>
+    <!-- FACTS: contact links -->
+    <div class="hero-links">
+      <a class="hero-link" href="mailto:tang.haoxu@northeastern.edu">Email ↗</a>
+      <a class="hero-link" href="https://linkedin.com/in/haoxuan-tang" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="hero-link" href="https://github.com/thxsyyd" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <img src="../assets/photo.jpg" alt="Haoxuan (Daisy) Tang">
+    </div>
+    <div class="hero-deco">H</div>
+  </div>
+</div>
+
+<div class="red-stripe"></div>
+
+<!-- ================= STATS =================
+     EDIT: pick the FOUR numbers that hit this posting hardest.
+     Available from the fact bank (see FACTS.md):
+       126 initiatives tracked      130+ metrics reported
+       40% fewer manual errors      3h -> 30min decision cycles
+       206 FAQ entries / 9 cats     100+ students supported
+       22 articles published        90% survey response rate
+       12 months as ambassador      5+ departments reconciled
+     ========================================= -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><span class="stat-num">000</span><span class="stat-label">LABEL ONE</span></div>
+    <div class="stat"><span class="stat-num">000<em>+</em></span><span class="stat-label">LABEL TWO</span></div>
+    <div class="stat"><span class="stat-num">000<em>%</em></span><span class="stat-label">LABEL THREE</span></div>
+    <div class="stat"><span class="stat-num">000</span><span class="stat-label">LABEL FOUR</span></div>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section>
+  <div class="section-label">About</div>
+  <!--== EDIT: headline. Short, concrete, no slogans. ==-->
+  <h2 class="section-title">HEADLINE LINE ONE<br><span>EMPHASIS PHRASE</span>.</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <!--== EDIT: 2-3 paragraphs, angled at this posting.
+                  Para 1: who you are now + the most relevant experience.
+                  Para 2: the concrete work, with numbers.
+                  Para 3: the softer half of the role (students, comms...). ==-->
+      <p>PARAGRAPH ONE.</p>
+      <p>PARAGRAPH TWO.</p>
+      <p>PARAGRAPH THREE.</p>
+
+      <!--== EDIT: 5-7 tags, ordered by relevance to the posting.
+                  Anchors must match section ids that exist on the page. ==-->
+      <div class="about-pills">
+        <span class="pill red">TOP SKILL</span>
+        <a class="pill" href="#evidence">SKILL</a>
+        <span class="pill">Bilingual (EN/ZH)</span>
+      </div>
+    </div>
+
+    <!-- FACTS: timeline. Update only when the CV actually changes.
+         Must stay identical to the resume. -->
+    <div class="about-card">
+      <div class="about-card-header">
+        <h3>Experience at a Glance</h3>
+        <!--== EDIT: three words describing the through-line ==-->
+        <p>SUBTITLE · IN · CAPS</p>
+      </div>
+      <div class="about-card-body">
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-text">
+          <strong>MS Information Systems · GPA 4.0</strong>
+          <span>Northeastern University, Seattle · Jan 2026 – Expected May 2028</span>
+        </div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-text">
+          <strong>Software Engineer Intern</strong>
+          <span>IpserLab, Seattle · May 2026 – Aug 2026</span>
+        </div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-text">
+          <strong>Technology Strategy Planner</strong>
+          <span>Cushman &amp; Wakefield · Jan 2024 – Dec 2025</span>
+        </div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-text">
+          <strong>International Student Ambassador</strong>
+          <span>University of Nottingham · Dec 2022 – Oct 2023</span>
+        </div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-text">
+          <strong>Course Representative</strong>
+          <span>University of Nottingham · Sep 2022 – Sep 2023</span>
+        </div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-text">
+          <strong>MArch Sustainable Urban Design · Dissertation: Distinction</strong>
+          <span>University of Nottingham · Sep 2022 – Dec 2023</span>
+        </div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-text">
+          <strong>BEng Architecture &amp; Urban Planning</strong>
+          <span>Zhejiang University of Technology · Sep 2017 – Jun 2022</span>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROLE FIT =================
+     This is the section that does the work. One row per requirement,
+     copied from the posting almost verbatim, each with real evidence.
+
+     Be honest about the gaps. Use fit-tag "adjacent" where you have not
+     done the exact thing -- an interviewer respects a marked gap and
+     punishes a bluff.
+     ============================================ -->
+<div class="fit-section" id="fit">
+  <div class="fit-inner">
+    <div class="section-label">Role Fit</div>
+    <h2 class="section-title">What the posting asks for,<br>and what I've <span>done</span>.</h2>
+    <p class="section-intro">
+      Taken from the posting. Where I've done the work directly, I've said so; where I'd be learning the specific system, I've said that too.
+    </p>
+
+    <!--== EDIT: duplicate this block once per requirement (aim for 6-9) ==-->
+    <div class="fit-row">
+      <div class="fit-req">
+        REQUIREMENT, QUOTED FROM THE POSTING
+        <em>SECTION IT CAME FROM</em>
+      </div>
+      <div class="fit-evidence">
+        EVIDENCE. Specific, with a number where one exists.
+        <span class="fit-tag direct">Direct experience</span>
+      </div>
+    </div>
+
+    <div class="fit-row">
+      <div class="fit-req">
+        A REQUIREMENT YOU ONLY PARTLY MEET
+        <em>SECTION IT CAME FROM</em>
+      </div>
+      <div class="fit-evidence">
+        What you do have, then plainly what you'd be learning.
+        <span class="fit-tag adjacent">Partial — what's missing</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ================= EVIDENCE: DARK CARDS =================
+     For the strongest 2-4 pieces of proof. Usually one job.
+     Delete this whole block if the posting does not need it.
+     ========================================================= -->
+<div class="dark-section" id="evidence">
+  <div class="dark-inner">
+    <div class="section-label">SECTION LABEL</div>
+    <h2 class="section-title">HEADLINE.<br><span>EMPHASIS</span>.</h2>
+    <p class="section-intro">Employer · Title · Dates. One line of framing.</p>
+    <div class="card-grid">
+
+      <div class="dark-card">
+        <div class="card-icon">📋</div>
+        <h3>CARD TITLE</h3>
+        <div class="card-meta">METRIC · METRIC</div>
+        <p>What you did, with <span class="highlight">numbers highlighted</span>.</p>
+      </div>
+
+      <div class="dark-card">
+        <div class="card-icon">📊</div>
+        <h3>CARD TITLE</h3>
+        <div class="card-meta">METRIC · METRIC</div>
+        <p>What you did, with <span class="highlight">numbers highlighted</span>.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= EVIDENCE: LIGHT CARDS =================
+     For a broader set of smaller items (3 per row).
+     Delete this whole block if the posting does not need it.
+     ========================================================== -->
+<section id="secondary">
+  <div class="section-label">SECTION LABEL</div>
+  <h2 class="section-title">HEADLINE<br><span>EMPHASIS</span>.</h2>
+  <p class="section-intro">One or two lines of framing.</p>
+  <div class="light-grid">
+
+    <div class="light-card">
+      <div class="light-cat data">CATEGORY</div>
+      <div class="light-body">
+        <div class="light-title">CARD TITLE</div>
+        <p class="light-note">Detail, with <strong>the number bolded</strong>.</p>
+      </div>
+    </div>
+    <!-- category colours available: data / support / events / web / content -->
+
+  </div>
+</section>
+
+<div class="red-stripe"></div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <h2>Let's talk.</h2>
+  <!--== EDIT: one line offering something concrete ==-->
+  <p>CLOSING LINE.</p>
+  <div class="footer-links">
+    <a href="mailto:tang.haoxu@northeastern.edu">tang.haoxu@northeastern.edu</a>
+    <a href="https://linkedin.com/in/haoxuan-tang" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/thxsyyd" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  <!--== EDIT: role + term ==-->
+  <p class="footer-note">
+    Haoxuan (Daisy) Tang · Northeastern University Seattle · Prepared for the ROLE TITLE search, TERM
+  </p>
+</footer>
+
+</body>
+</html>
