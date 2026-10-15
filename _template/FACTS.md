@@ -1,9 +1,16 @@
 # Fact bank
 
-Everything here is verified against the resume and the master CV
-(`~/Desktop/个人简历/个人简历完整版_信息截止202608.docx`). Pull from this list
-when filling a role page — do not invent numbers, and do not restate a number
-in a stronger form than it appears here.
+Verified against the most recent tailored resume for the track in question:
+
+- school roles — `~/Desktop/01-NEU/06-校内兼职/NEU校内工作简历/`
+- industry roles — `~/Desktop/个人简历/01-投递简历（SWE）/`
+
+Always take the newest file by date. Do **not** use
+`03-底稿/个人简历完整版_信息截止202608.docx` — it is a stale snapshot and is
+missing anything after August 2026.
+
+Pull from this list when filling a role page — do not invent numbers, and do not
+restate a number in a stronger form than it appears here.
 
 Not published: this folder starts with `_`, so GitHub Pages skips it.
 
@@ -15,7 +22,7 @@ Not published: this folder starts with `_`, so GitHub Pages skips it.
 | Phone | 425-749-2820 |
 | Email — school roles | tang.haoxu@northeastern.edu |
 | Email — industry roles | the 2027-cycle Outlook address |
-| Program — school roles | MS Information Systems (MSIS) |
+| Program — school roles | MS Information Systems - Bridge (MSISB) |
 | Program — industry roles | Computer Software Engineering (CSE, matches the I-20) |
 | Location | Seattle, WA |
 | Languages | English (fluent), Mandarin (native) |
@@ -24,9 +31,9 @@ Keep the pair consistent: `.edu` + MSIS, or Outlook + CSE. Never mix.
 
 ## Education
 
-- **Northeastern University**, Seattle — MS Information Systems, GPA 4.0/4.0, Jan 2026 – Expected May 2028
+- **Northeastern University**, Seattle — MS Information Systems - Bridge (MSISB), GPA 4.0/4.0, Jan 2026 – Expected May 2028
   - Relevant coursework: Data Management and Database Design; Advanced Big-Data Applications and Indexing Techniques; Web Design and User Experience Engineering
-- **University of Nottingham** — MArch Sustainable Urban Design, Sep 2022 – Dec 2023, **Dissertation: Distinction**, top 3 in cohort
+- **University of Nottingham** — MArch Sustainable Urban Design, Sep 2022 – Dec 2023, **GPA 3.9/4.0**, **Dissertation: Distinction**, top 3 in cohort
 - **Zhejiang University of Technology** — BEng Architecture and Urban Planning, Sep 2017 – Jun 2022
 
 ## Experience
@@ -34,6 +41,12 @@ Keep the pair consistent: `.edu` + MSIS, or Outlook + CSE. Never mix.
 ### Cushman & Wakefield — Technology Strategy Planner (Jan 2024 – Dec 2025)
 Merged entry covering the Sanya Yazhou Bay Science & Technology City posting
 (employer of record vs. site assignment).
+
+**Which framing to use.** School and on-campus roles: Cushman & Wakefield,
+Technology Strategy Planner, **Jan 2024 – Dec 2025** — this entry, as written here.
+Industry/SWE roles: the Sanya Yazhou Bay Science and Technology City framing,
+Sanya China, Aug 2024 – Dec 2025, as used in the SWE resumes. Never mix the two
+employer names or the two start dates in one document.
 
 - **126** planning and consulting projects audited/tracked across a five-year cycle;
   full-lifecycle oversight covering contract execution, budget control, delivery
@@ -53,8 +66,17 @@ Merged entry covering the Sanya Yazhou Bay Science & Technology City posting
 - Debouncing + client-side caching cut redundant API calls by **40%**
 - Async request cancellation to keep stale results out of comparison views
 
+### Adobe — Student Ambassador, Northeastern Seattle (Sep 2026 – present)
+Verified from published work, not from the CV snapshot.
+
+- Represents Adobe to the Northeastern Seattle student community; promotes the
+  university's free Adobe Express license
+- Five-slide LinkedIn carousel published 6 Oct 2026, designed end to end in Adobe
+  Express to Adobe brand guidelines, with sponsored-content disclosure
+- Appointment announced publicly on LinkedIn 30 Sep 2026, with an original illustration
+
 ### University of Nottingham — International Student Ambassador (Dec 2022 – Oct 2023)
-Faculty of Engineering. Selected through three English-language interviews.
+Faculty of Engineering.
 
 - **206**-question bilingual reference document across **9** categories, maintained
   over **12** months
