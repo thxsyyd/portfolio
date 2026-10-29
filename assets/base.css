@@ -266,7 +266,7 @@
     cursor: pointer;
   }
 
-  a.pill:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+  a.pill:hover { background: var(--red); color: var(--white); border-color: var(--red); }
   .pill.red { background: var(--red); color: var(--white); border-color: var(--red); }
 
   .about-card {
