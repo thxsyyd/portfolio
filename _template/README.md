@@ -10,11 +10,14 @@ portfolio/
 │   └── photo.jpg             shared portrait
 ├── _template/                this folder — not published (leading "_")
 │   ├── index.html            starting point for a new page
-│   ├── FACTS.md              verified fact bank
 │   └── README.md             this file
 ├── academic-coordinator/     live
 └── gls-ambassador/           live
 ```
+
+The verified fact bank (`FACTS.md`) is deliberately **not** in this repo. It lives in
+the folder above it (`../FACTS.md`), so it can never be copied into a published page
+or read on GitHub.
 
 Root has no `index.html` on purpose: `thxsyyd.github.io/portfolio/` returns 404,
 so the only way to reach a page is with its full URL.
@@ -22,7 +25,7 @@ so the only way to reach a page is with its full URL.
 ## Starting a new application
 
 ```bash
-cd ~/portfolio
+# from the repo root
 cp -r _template role-slug
 ```
 
@@ -33,7 +36,7 @@ and edit only the blocks marked `<!== EDIT ==>`. Do not add a `<style>` block.
 Preview before pushing:
 
 ```bash
-cd ~/portfolio && python3 -m http.server 8899
+python3 -m http.server 8899   # from the repo root
 # then open http://localhost:8899/role-slug/
 ```
 
@@ -50,7 +53,7 @@ GitHub Pages rebuilds in about a minute.
 | Layer | Where | How often it changes |
 |---|---|---|
 | Styling | `assets/base.css` | never, unless restyling everything |
-| Facts | timeline + contact blocks, `FACTS.md` | only when the CV changes |
+| Facts | timeline + contact blocks, `../FACTS.md` (outside the repo) | only when the CV changes |
 | Role | everything marked `EDIT` | every application |
 
 Only the third layer is real work. The bulk of it is the Role Fit table:
